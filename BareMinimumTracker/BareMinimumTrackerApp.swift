@@ -11,9 +11,7 @@ import SwiftData
 @main
 struct BareMinimumTrackerApp: App {
     var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
+        let schema = Schema([User.self])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
@@ -25,7 +23,7 @@ struct BareMinimumTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView() // Set LoginView as the initial view
         }
         .modelContainer(sharedModelContainer)
     }
